@@ -1,0 +1,43 @@
+[project]
+name = "market-news-backend"
+version = "0.1.0"
+description = "Multi-agent market & tech news content creator (backend)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy[asyncio]>=2.0",
+    "aiosqlite>=0.20",
+    "aiomysql>=0.2.0",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "openai>=1.40",
+    "google-genai>=1.0",
+    "httpx>=0.27",
+    "feedparser>=6.0",
+    "apscheduler>=3.10",
+    "python-dotenv>=1.0",
+    "tenacity>=8.3",
+]
+
+[project.optional-dependencies]
+# Video pipeline. imageio-ffmpeg bundles a static ffmpeg binary (no system install
+# needed). Frames are drawn with Pillow + rendered via MoviePy ImageClip, so no
+# TextClip / ImageMagick dependency.
+video = [
+    "moviepy>=2.0",
+    "imageio-ffmpeg>=0.5.1",
+    "pillow>=10.3",
+    "numpy>=1.26",
+]
+extras = [
+    "redis>=5.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

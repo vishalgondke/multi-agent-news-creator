@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: market-news-backend
+Version: 0.1.0
+Summary: Multi-agent market & tech news content creator (backend)
+Requires-Python: >=3.10
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn[standard]>=0.30
+Requires-Dist: sqlalchemy[asyncio]>=2.0
+Requires-Dist: aiomysql>=0.2.0
+Requires-Dist: pydantic>=2.7
+Requires-Dist: pydantic-settings>=2.3
+Requires-Dist: anthropic>=0.40
+Requires-Dist: httpx>=0.27
+Requires-Dist: feedparser>=6.0
+Requires-Dist: apscheduler>=3.10
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: tenacity>=8.3
+Provides-Extra: video
+Requires-Dist: moviepy>=1.0.3; extra == "video"
+Requires-Dist: imageio-ffmpeg>=0.5.1; extra == "video"
+Requires-Dist: pillow>=10.3; extra == "video"
+Provides-Extra: extras
+Requires-Dist: openai>=1.40; extra == "extras"
+Requires-Dist: redis>=5.0; extra == "extras"
